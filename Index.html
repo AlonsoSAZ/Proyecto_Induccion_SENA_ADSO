@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guías de aprendizaje SENA · ADSO</title>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--verde:#39A900;--verde-d:#2b8000;--verde-l:#e9f6e0;--azul:#00304D;--azul-l:#e6eef4;--amar:#FDC300;--fondo:#f5f8f2;--txt:#1d2b36;--r:22px}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:"Work Sans",system-ui,sans-serif;background:var(--fondo);color:var(--txt);line-height:1.65}
+a{color:var(--verde-d)}
+:focus-visible{outline:3px solid var(--amar);outline-offset:2px}
+header.hero{background:var(--azul);color:#fff;margin:16px;border-radius:32px;padding:56px 32px 64px;text-align:center;border-bottom:8px solid var(--verde)}
+.hero h1{font-size:clamp(1.9rem,5vw,3.2rem);font-weight:800;line-height:1.15;max-width:18ch;margin:0 auto 14px}
+.hero p{max-width:60ch;margin:0 auto;opacity:.88}
+.hero .tag{display:inline-block;background:var(--verde);padding:6px 18px;border-radius:99px;font-weight:600;font-size:.9rem;margin-bottom:18px}
+nav{position:sticky;top:10px;z-index:10;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;background:#fff;width:max-content;max-width:calc(100% - 24px);margin:-26px auto 0;padding:8px;border-radius:99px;box-shadow:0 6px 24px rgba(0,48,77,.18)}
+nav a{text-decoration:none;color:var(--azul);font-weight:600;padding:8px 18px;border-radius:99px;font-size:.95rem}
+nav a:hover{background:var(--verde);color:#fff}
+main{max-width:980px;margin:0 auto;padding:40px 16px 20px}
+section.guia{margin-bottom:64px}
+.guia>h2{background:var(--verde);color:#fff;border-radius:var(--r);padding:20px 28px;font-size:1.6rem;font-weight:800;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center}
+.guia>h2 small{font-size:.9rem;font-weight:500;background:rgba(0,0,0,.18);padding:4px 14px;border-radius:99px}
+.guia>.intro{margin:14px 6px 24px;color:#4a5b68}
+.qa{background:#fff;border-radius:var(--r);margin-bottom:22px;box-shadow:0 2px 14px rgba(0,48,77,.08);overflow:hidden}
+.q{background:var(--azul-l);padding:16px 24px;border-bottom:2px dashed #b8cbd8}
+.q h3{font-size:1.05rem;color:var(--azul);font-weight:700}
+.q span,.a>span{display:inline-block;font-size:.8rem;font-weight:700;padding:2px 12px;border-radius:99px;margin-bottom:6px}
+.q span{background:var(--azul);color:#fff}
+.a{padding:18px 24px 22px;border-left:8px solid var(--verde);margin:0}
+.a>span{background:var(--verde-l);color:var(--verde-d)}
+.a p+p,.a ul,.a table{margin-top:10px}
+.a ul{padding-left:22px}
+table{width:100%;border-collapse:separate;border-spacing:0;border:2px solid var(--verde);border-radius:16px;overflow:hidden;font-size:.94rem}
+th{background:var(--verde);color:#fff;text-align:left;padding:10px 14px}
+td{padding:10px 14px;border-top:1px solid #d9e6d0;vertical-align:top}
+td ul{margin-top:0;padding-left:18px}
+td:empty{height:96px}
+tr:nth-child(even) td{background:#f6fbf2}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+.chip{background:var(--verde-l);border:2px solid var(--verde);border-radius:16px;padding:10px 14px;flex:1 1 210px;font-size:.93rem}
+.chip b{display:block;color:var(--azul)}
+.sep{display:flex;align-items:center;gap:12px;margin:34px 4px 16px;color:var(--azul);font-weight:700}
+.sep::after{content:"";flex:1;height:3px;border-radius:3px;background:var(--amar)}
+/* multimedia */
+.slot{background:#fff;border:2px solid var(--azul);border-radius:var(--r);overflow:hidden;margin:0 0 22px}
+.slot figcaption{background:var(--azul);color:#fff;padding:10px 20px;font-weight:600;font-size:.95rem;display:flex;justify-content:space-between;gap:8px}
+.slot .box{min-height:200px;display:grid;place-items:center;padding:18px;text-align:center;background:repeating-linear-gradient(45deg,#f7fbf4,#f7fbf4 12px,#eef7e8 12px,#eef7e8 24px)}
+.slot .box img,.slot .box video{max-width:100%;max-height:440px;border-radius:14px}
+.slot .box a.yt{position:relative;display:block;width:100%;max-width:640px}
+.slot .box a.yt img{width:100%;display:block}
+.slot .box a.yt span{position:absolute;inset:auto auto 14px 14px;background:var(--verde);color:#fff;font-weight:700;padding:8px 20px;border-radius:99px}
+.slot .box audio{width:100%}
+.slot .box iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:14px}
+.slot code{background:#fff;border:1px solid var(--verde);border-radius:8px;padding:1px 8px;font-size:.88rem;color:var(--azul)}
+.slot p{color:#4a5b68;margin-bottom:12px;font-size:.92rem}
+footer{background:var(--azul);color:#fff;margin:16px;border-radius:32px;border-top:8px solid var(--verde);padding:36px 24px;text-align:center}
+footer .nombre{display:inline-block;min-width:260px;margin:10px 0;padding:10px 24px;border-radius:99px;background:#fff;color:var(--azul);font-weight:700;font-size:1.15rem}
+footer .nombre:empty::before{content:"Escribe tu nombre en el código";color:#8a9aa6;font-weight:500}
+footer small{display:block;opacity:.75}
+@media(max-width:600px){.guia>h2{font-size:1.25rem}.q,.a{padding-left:16px;padding-right:16px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<!--
+  CÓMO AGREGAR LAS IMÁGENES, VIDEOS Y AUDIOS (10 espacios):
+  Busca cada <figure class="slot" ...> y escribe la ruta o el enlace en data-src="".
+    Imagen:  data-src="img/logo-sena.png"
+    Video:   data-src="video/sector-textil.mp4"  o un enlace de YouTube
+    Audio:   data-src="audio/noticiero-1957.mp3"
+  Guarda los archivos en carpetas junto a este HTML (img/, video/, audio/).
+-->
+
+<header class="hero">
+  <span class="tag">Tecnología en Análisis y Desarrollo de Software · ADSO</span>
+  <h1>Mis guías de aprendizaje SENA</h1>
+  <p>Inducción al SENA, al sector de manufactura textil y cuero, y a mi proyecto de vida. Cada guía separa la actividad de su respuesta.</p>
+</header>
+
+<nav aria-label="Guías">
+  <a href="#g1">Guía 1</a><a href="#g2">Guía 2</a><a href="#g3">Guía 3</a><a href="#pie">Autor</a>
+</nav>
+
+<main>
+
+<!-- ============ GUÍA 1 ============ -->
+<section class="guia" id="g1">
+  <h2>Guía 1 · Inducción <small>GFPI-F-135 · 2023</small></h2>
+  <p class="intro">Ficha 3603495. Conocimiento general del SENA: historia, estructura, servicios y normas de convivencia.</p>
+
+  <figure class="slot" data-type="image" data-title="Multimedia 1 · Logo-símbolo del SENA" data-src="img/LOGO.png"></figure>
+
+  <div class="qa"><div class="q"><span>Actividad</span><h3>3.1 Reflexión inicial</h3></div>
+  <div class="a"><span>Mi respuesta</span><p>Me considero una persona productiva, con capacidades cognitivas y actitudinales. Nos vemos como egresados con título de tecnólogo, aportando social y técnicamente: diseñando una plataforma para instituciones educativas, creando bases de datos, programando módulos y capacitando a los alumnos, para acompañar su proceso educativo y prevenir el bajo rendimiento y la deserción escolar.</p></div></div>
+
+  <div class="qa"><div class="q"><span>Actividad</span><h3>3.2 Contextualización: ¿Qué sabe usted del SENA?</h3></div>
+  <div class="a"><span>Mi respuesta</span><p>Es una entidad pública respaldada por el Ministerio del Trabajo y el Ministerio de Educación para formar auxiliares, operarios, técnicos y tecnólogos, de forma gratuita, para capacitar a toda la población.</p></div></div>
+
+  <div class="qa"><div class="q"><span>Actividad</span><h3>3.2 ¿Cuál es su expectativa frente a la formación que le puede ofrecer el SENA?</h3></div>
+  <div class="a"><span>Mi respuesta</span><p>Además de acceder a beneficios como las ayudas socioeconómicas y obtener un título, nos ayudará a extender nuestra vida laboral y …</p></div></div>
+
+  <figure class="slot" data-type="image" data-title="Multimedia 2 · Representación del noticiero de 1957 (historia)" data-src="img/HISTORIA SENA.jpg"></figure>
+
+  <div class="qa"><div class="q"><span>Actividad</span><h3>3.3.1.1 Historia del SENA</h3></div>
+  <div class="a"><span>Mi respuesta · guion de noticiero</span>
+  <p><b>Locutor principal:</b> «¡Bienvenidos al noticiero de la Radiodifusora Nacional de Colombia, hoy miércoles 21 de junio de 1957! Se crea el Servicio Nacional de Aprendizaje, SENA».</p>
+  <p>Sus raíces se remontan a 1904 con el Decreto 491 (Escuelas de Arte y Oficios del Instituto Salesiano). Luego llegaron la Recomendación 57 de la OIT (1939), la experiencia del SENAI en Brasil y la creación del Instituto de Capacitación Obrera en 1954, impulsado por la UTC. Tras la huelga nacional del 6 al 10 de mayo, se expidió el Decreto Ley 118 del 21 de junio de 1957.</p>
+  <p><b>Rodolfo Martínez Tono:</b> «El SENA nace de una alianza entre trabajadores, empresarios, la Iglesia Católica y la OIT, con el aval del Gobierno. No es obra de un solo hombre, sino del trabajo en equipo para invertir en el desarrollo técnico y social de la fuerza laboral».</p></div></div>
+
+  <div class="qa"><div class="q"><span>Actividad</span><h3>3.3.1.3 Misión y visión</h3></div>
+  <div class="a"><span>Mi respuesta</span><p>El SENA ofrece formación profesional integral para preparar a los colombianos en diferentes áreas productivas. En confección industrial, por ejemplo, se aprende de forma teórica y práctica, se desarrollan habilidades para el trabajo y se aporta al desarrollo social del país.</p></div></div>
+
+  <div class="qa"><div class="q"><span>Actividad</span><h3>3.3.1.3 Estructura orgánica del SENA</h3></div>
+  <div class="a"><span>Mi respuesta</span>
+  <div class="chips">
+   <div class="chip"><b>Máximo órgano directivo</b>Consejo Directivo Nacional: define políticas, planes y programas, y expide acuerdos.</div>
+   <div class="chip"><b>Director General</b>Fray Ricardo Ernesto Torres Castro (desde el 19 de agosto de 2026).</div>
+   <div class="chip"><b>Regionales</b>33 regionales. El Centro de Manufactura en Textil y Cuero pertenece a la Regional Distrito Capital.</div>
+   <div class="chip"><b>Director Regional D.C.</b>Gerardo Arturo Medina Rosas.</div>
+   <div class="chip"><b>Subdirectora del Centro</b>Viviana Gómez Vargas.</div>
+  </div></div></div>
+
+  <figure class="slot" data-type="image" data-title="Multimedia 3 · Escudo" data-src="img/escudo-sena.png"></figure>
+
+  <div class="qa"><div class="q"><span>Actividad</span><h3>3.3.1.5 Identidad corporativa: misión y símbolos</h3></div>
+  <div class="a"><span>Mi respuesta</span>
+  <p>«El SENA está encargado de cumplir la función del Estado de invertir en el desarrollo social y técnico de los trabajadores colombianos, ofreciendo formación profesional integral para su incorporación en actividades productivas que contribuyan al desarrollo social, económico y tecnológico del país.»</p>
+  <p>Símbolos: himno, escudo, bandera y logo-símbolo (ver multimedia de esta guía).</p></div></div>
+
+  <div class="qa"><div class="q"><span>Actividad</span><h3>3.3.2 Servicios a los que tiene derecho en el SENA</h3></div>
+  <div class="a"><span>Mi respuesta</span>
+  <table><tr><th>Servicio</th><th>Qué comprende</th><th>Responsable</th></tr>
+  <tr><td>Fondo Emprender</td><td>Capital semilla condonable para crear empresas y generar empleo, si se cumplen las metas del plan de negocio.</td><td>Jhon Jairo Lora Pinzon y Cristian Roberto Monsalve Echavarria</td></tr>
+  <tr><td>Agencia Pública de Empleo</td><td>Servicio gratuito que conecta a quienes buscan empleo con empresas; también intermedia empleo en el exterior.</td><td>Viviana Gomez Vargas</td></tr>
+  <tr><td>Relaciones Corporativas</td><td>Conecta al SENA con empresas, gremios y Estado mediante convenios y alianzas.</td><td>Gloria Mercedes Marín Grisales</td></tr>
+  <tr><td>SENNOVA</td><td>Sistema de investigación, desarrollo tecnológico e innovación (Acuerdo 00016 de 2012).</td><td>—</td></tr>
+  <tr><td>Bienestar al Aprendiz</td><td>Acompaña la permanencia: salud, convivencia, desarrollo personal y apoyo económico.</td><td>Astrid E. Bonilla, Elvia P. Rojas, Myriam G. Galindo</td></tr>
+  <tr><td>Administración educativa</td><td>Trámites y registros desde la inscripción hasta la certificación.</td><td>Jarinsson Gómez R., Angie L. Pardo G.</td></tr>
+  <tr><td>Biblioteca</td><td>Información, recursos y acompañamiento para trabajos y proyectos.</td><td>Nury Andrea Forero Ariza</td></tr></table></div></div>
+
+  <div class="qa"><div class="q"><span>Actividad</span><h3>3. Normas de convivencia · Caso #3</h3>
+  <p style="margin-top:6px;font-size:.93rem">Durante una sesión académica, dos aprendices se agreden verbal y físicamente y se causan lesiones moderadas; lo atribuyen al «acaloramiento» y reconocen que interrumpieron las actividades.</p></div>
+  <div class="a"><span>Mi respuesta</span>
+  <p><b>Tipo de falta:</b> disciplinaria, porque hubo pelea en clase, lesiones y afectación de la actividad de formación.</p>
+  <p><b>Criterios de clasificación:</b> lesiones ocasionadas, cómo se desarrolló la situación y con qué intención, antecedentes disciplinarios y testimonios.</p>
+  <p><b>Gravedad:</b> grave, por afectar la integridad física y la convivencia. Sería gravísima si se demuestra intención de causar daños muy graves o riesgo para la vida.</p>
+  <p><b>Reglamento del aprendiz (Acuerdo 007 de 2012):</b></p>
+  <ul><li>Capítulo VIII, art. 23: afectó el aprendizaje y la convivencia.</li><li>Art. 24: falta disciplinaria por incumplir deberes de convivencia.</li><li>Art. 25: clasificación en leve, grave o gravísima (aquí, grave).</li><li>Art. 26, numerales 1, 2, 3 y 5: daños, participación, antecedentes, rendimiento y reconocimiento de la falta.</li><li>Art. 26, numeral 6: intento de reparar el daño.</li><li>Art. 26, numeral 8: naturaleza y gravedad de la conducta.</li></ul></div></div>
+</section>
+
+<!-- ============ GUÍA 2 ============ -->
+<section class="guia" id="g2">
+  <h2>Guía 2 · Formación Profesional Integral <small>Sector CMTC</small></h2>
+  <p class="intro">Procesos del sector textil y cuero, estructura de la FPI, etapa productiva, certificación y cadena de formación.</p>
+  <figure class="slot" data-type="video" data-title="Multimedia 4 · Video del sector de manufactura textil y cuero" data-src="https://www.youtube.com/embed/NUDgl37Uhag"></figure>
+  <div class="qa"><div class="q"><span>Actividad</span><h3>3.1 Reflexión inicial: procesos del sector de manufactura textil y cuero (CMTC)</h3></div>
+  <div class="a"><span>Mi respuesta</span>
+  <p>El sector transforma materias primas en productos terminados con trabajadores, máquinas, herramientas y procesos que aseguren calidad.</p>
+  <div class="chips">
+   <div class="chip"><b>Diseño del producto</b>Planear forma, tamaño, colores, materiales y utilidad.</div>
+   <div class="chip"><b>Selección de materias primas</b>Escoger y revisar que cumplan requisitos de calidad.</div>
+   <div class="chip"><b>Trazado y corte</b>Marcar medidas y moldes en la tela y cortar las piezas.</div>
+   <div class="chip"><b>Confección, ensamble, etiquetado y empaque</b>Unir piezas, agregar accesorios, etiquetar y proteger.</div>
+   <div class="chip"><b>Almacenamiento y distribución</b>Guardar y transportar a tiendas o clientes.</div>
+  </div></div></div>
+
+  <div class="qa"><div class="q"><span>Actividad</span><h3>Lo que conozco y lo que quiero aprender</h3></div>
+  <div class="a"><span>Mi respuesta</span>
+  <table><tr><th>Lo que conozco</th><th>Lo que quiero aprender</th></tr>
+  <tr><td>Conocimientos básicos de computadores y herramientas tecnológicas.</td><td>Python, Java o JavaScript aplicados en proyectos.</td></tr>
+  <tr><td>Idea básica de programación y de cómo funcionan algunas aplicaciones.</td><td>Seguridad informática, protección de datos y desarrollo seguro.</td></tr>
+  <tr><td>Herramientas digitales para documentos, consultas y organización.</td><td>Herramientas de desarrollo y control de versiones como Git.</td></tr>
+  <tr><td>La tecnología cambia y hay que actualizarse.</td><td>Desarrollar aplicaciones que resuelvan problemas reales.</td></tr>
+  <tr><td>Disposición para aprender nuevas habilidades.</td><td>Comunicación, trabajo colaborativo, liderazgo y resolución de problemas.</td></tr></table></div></div>
+
+  <figure class="slot" data-type="image" data-title="Multimedia 5 · Organizador gráfico de la FPI" data-src="img/organizacion.png"></figure>
+
+  <div class="qa"><div class="q"><span>Actividad</span><h3>3.3.1.1 Organizador gráfico: Formación Profesional Integral (FPI)</h3></div>
+  <div class="a"><span>Mi respuesta</span>
+  <p>La FPI es un proceso de aprendizaje que prepara para el trabajo y contribuye al desarrollo personal y social.</p>
+  <div class="chips">
+   <div class="chip"><b>Niveles</b>Operario, auxiliar, técnico, tecnólogo y formación complementaria.</div>
+   <div class="chip"><b>Modalidades</b>Presencial, virtual y a distancia.</div>
+   <div class="chip"><b>Etapas</b>Lectiva (teoría y práctica con instructores) y productiva (aplicación en un entorno laboral).</div>
+   <div class="chip"><b>Enfoque por competencias</b>Aprender a saber, saber hacer y saber ser.</div>
+   <div class="chip"><b>Programa de formación</b>Plan que organiza los conocimientos, habilidades y competencias para una ocupación.</div>
+  </div></div></div>
+
+  <div class="qa"><div class="q"><span>Actividad</span><h3>3.3.1.2 Competencia del programa asignada por el instructor</h3></div>
+  <div class="a"><span>Mi respuesta</span>
+  <p><b>Competencia:</b> Análisis de la especificación de requisitos del software.</p>
+  <table><tr><th>Resultados de aprendizaje</th><th>Criterios de evaluación</th></tr>
+  <tr><td><b>R1:</b> Planear actividades de análisis de acuerdo con la metodología seleccionada.</td><td><ul><li><b>C1:</b> Identifica metodologías de desarrollo de software de acuerdo con las características del software a desarrollar.</li><li><b>C2:</b> Establece las actividades de análisis de acuerdo con la metodología seleccionada.</li></ul></td></tr>
+  <tr><td><b>R2:</b> Modelar las funciones del software de acuerdo con el informe de requisitos.</td><td><ul><li><b>C1:</b> Interpreta el informe de requisitos para modelar las funciones del software.</li><li><b>C2:</b> Realiza diagramas de actividades exponiendo detalles de los casos de uso.</li><li><b>C3:</b> Genera plantillas extendidas de casos de uso expresando la intención de las acciones a desarrollar.</li><li><b>C4:</b> Documenta las actividades de análisis a través de un informe.</li><li><b>C5:</b> Elabora el modelo entidad-relación de acuerdo con los requisitos del software.</li></ul></td></tr>
+  <tr><td><b>R3:</b> Desarrollar procesos lógicos a través de la implementación de algoritmos.</td><td><ul><li><b>C1:</b> Soluciona problemas de lógica proposicional incorporando habilidades propias como programador.</li><li><b>C2:</b> Crea soluciones a problemas mediante algoritmos para ordenar y simplificar los códigos.</li><li><b>C3:</b> Crea funciones y procedimientos en la solución de algoritmos para ordenar y simplificar códigos.</li></ul></td></tr>
+  <tr><td><b>R4:</b> Verificar los modelos realizados en la fase de análisis de acuerdo con lo establecido en el informe de requisitos.</td><td><ul><li><b>C1:</b> Elabora listas de chequeo para validación de la documentación de análisis.</li><li><b>C2:</b> Evalúa el informe de análisis teniendo en cuenta la calidad de los artefactos generados y la respuesta al cumplimiento de requisitos.</li><li><b>C3:</b> Realiza mejoras a la documentación de análisis de acuerdo con los resultados de la evaluación.</li><li><b>C4:</b> Realiza prototipo inicial del software de acuerdo con los casos de uso identificados.</li></ul></td></tr>
+  </table></div></div>
+
+  <figure class="slot" data-type="image" data-title="Multimedia 6 · Esquema de las alternativas de etapa productiva" data-src="img/alternativa.png"></figure>
+
+  <div class="qa"><div class="q"><span>Actividad</span><h3>3.3.3 Etapa productiva: alternativas y la que más me interesa</h3></div>
+  <div class="a"><span>Mi respuesta</span>
+  <div class="chips">
+   <div class="chip"><b>Contrato de aprendizaje</b>Etapa productiva en una empresa.</div>
+   <div class="chip"><b>Vinculación laboral o contractual</b>Actividades afines a la formación en una empresa.</div>
+   <div class="chip"><b>Proyecto productivo</b>Idea de negocio propia.</div>
+   <div class="chip"><b>Unidad productiva familiar</b>Aplicar lo aprendido en un negocio familiar.</div>
+   <div class="chip"><b>Pasantía</b>Prácticas en una empresa o institución.</div>
+   <div class="chip"><b>Monitoría</b>Apoyo a actividades formativas dentro del SENA.</div>
+  </div>
+  <p><b>Mi elección: contrato de aprendizaje.</b> Ya cuento con un técnico en el SENA y sé por experiencia que se aprende más trabajando en la empresa: desarrollo habilidades, aprendo de personas con experiencia, fortalezco valores, mejoro mi hoja de vida y gano opciones de empleo estable.</p></div></div>
+
+  <div class="qa"><div class="q"><span>Actividad</span><h3>3.3.4 Evaluación de la formación profesional integral</h3></div>
+  <div class="a"><span>Mi respuesta</span><p>La evaluación permite saber si el aprendiz desarrolla las habilidades necesarias. Debe ser justa y clara, y considerar lo que sabe y sabe hacer. Los trabajos y actividades, en clase y en la etapa productiva, demuestran lo aprendido y señalan qué mejorar para el mundo laboral.</p></div></div>
+
+  <div class="qa"><div class="q"><span>Actividad</span><h3>3.3.5 Certificación</h3></div>
+  <div class="a"><span>Mi respuesta</span><p>Al terminar satisfactoriamente y cumplir los requisitos, recibiré el título de Tecnólogo en Análisis y Desarrollo de Software, que certifica mi capacidad para desarrollar programas y aplicaciones, diseñar bases de datos, realizar pruebas de software y participar en soluciones tecnológicas.</p></div></div>
+
+  <div class="qa"><div class="q"><span>Actividad</span><h3>3.3.6 Cadena de formación y reflexión personal</h3></div>
+  <div class="a"><span>Mi respuesta</span>
+  <p>Es la estrategia que permite continuar estudios en niveles superiores mediante convenios con instituciones de educación superior, con posible homologación de asignaturas o créditos. Desde ADSO se puede continuar en Ingeniería de Software, de Sistemas o Informática, según los convenios vigentes.</p>
+  <p><b>Reflexión:</b> mi objetivo es terminar la tecnología y luego estudiar Ingeniería de Software o de Sistemas, para mejorar mis competencias y acceder a mejores oportunidades.</p></div></div>
+
+  <div class="qa"><div class="q"><span>Actividad</span><h3>3.4 Transferencia: plataformas tecnológicas del SENA</h3></div>
+  <div class="a"><span>Mi respuesta</span>
+  <ul><li><a href="https://sena.territorio.la/cms/index.php" target="_blank" rel="noopener">Territorium</a></li>
+  <li><a href="http://biblioteca.sena.edu.co/" target="_blank" rel="noopener">Biblioteca SENA</a></li>
+  <li><a href="http://certificados.sena.edu.co/" target="_blank" rel="noopener">Certificados SENA</a></li>
+  <li>Sofía Plus, correo SoySENA y Sistema Virtual de Aprendices (SVA).</li></ul></div></div>
+</section>
+
+<!-- ============ GUÍA 3 ============ -->
+<section class="guia" id="g3">
+  <h2>Guía 3 · Proyecto de vida <small>13 horas</small></h2>
+  <p class="intro">Competencia: inducción al proceso de formación profesional integral. Identificar la dinámica del SENA y el rol de la FPI en mi proyecto de vida.</p>
+
+  <figure class="slot" data-type="video" data-title="Multimedia 7 · Discurso a los jóvenes de José «Pepe» Mujica" data-src="https://www.youtube.com/watch?v=tHkXmBzmq3A"></figure>
+
+  <div class="sep">Actividades de reflexión</div>
+  <div class="qa"><div class="q"><span>Actividad</span><h3>¿Qué significan «imposible» y «derrotado» y en qué momento de su vida las aplicaría?</h3></div>
+  <div class="a"><span>Mi respuesta</span><p><b>Imposible</b> es un reto que parece difícil, pero que se supera con esfuerzo, disciplina y paciencia. <b>Derrotado</b> es rendirse y dejar de luchar. Lo aplicaríamos en el SENA cuando sintamos que no podemos terminar: nos apoyaremos como equipo para graduarnos como tecnólogos en ADSO. Equivocarse no es fracasar, es una oportunidad para aprender.</p></div></div>
+
+  <div class="qa"><div class="q"><span>Actividad</span><h3>¿Cuál es el sentido que hoy le está dando a su vida?</h3></div>
+  <div class="a"><span>Mi respuesta</span><p>Luchar por mis sueños, superarme cada día y construir un mejor futuro para mi familia y para mí. Mi objetivo es graduarme como tecnólogo, conseguir buenas oportunidades laborales y fortalecer mis valores: responsabilidad, honestidad y perseverancia. Mujica me recuerda valorar el tiempo, la felicidad y a las personas que me rodean más que el dinero.</p></div></div>
+
+  <div class="sep">Actividades de contextualización</div>
+  <div class="qa"><div class="q"><span>Actividad</span><h3>¿Quiénes somos? ¿Quiénes queremos ser? ¿Qué camino debemos tomar?</h3></div>
+  <div class="a"><span>Mi respuesta</span>
+  <p><b>Quiénes somos:</b> jóvenes aprendices del SENA que construyen su futuro personal y profesional estudiando Análisis y Desarrollo de Software, con fortalezas y debilidades y disposición para mejorar.</p>
+  <p><b>Quiénes queremos ser:</b> profesionales responsables, honestos y comprometidos; graduarnos, conseguir buenas oportunidades, dar un mejor futuro a nuestras familias y aportar a la sociedad.</p>
+  <p><b>Camino:</b> disciplina, responsabilidad, respeto y perseverancia; organizar el tiempo, trabajar en equipo y aprovechar las oportunidades del SENA.</p>
+  <p><b>Conclusión grupal:</b> nuestro proyecto de vida se construye con las decisiones de cada día; con esfuerzo, disciplina y unión alcanzaremos nuestras metas.</p></div></div>
+
+  <div class="qa"><div class="q"><span>Actividad</span><h3>¿Cuáles serían los principales hechos de vida que marcaron sus grandes decisiones?</h3></div>
+  <div class="a"><span>Mi respuesta</span><p>Los hechos que nos formaron no son solo los grandes acontecimientos, sino también las pequeñas experiencias y decisiones. En lo personal, los errores y retos nos hicieron madurar; en lo familiar, los consejos formaron nuestros valores; en lo social, la amistad y el trabajo en equipo nos enseñaron respeto y empatía; en lo profesional, elegir esta formación define nuestras metas.</p></div></div>
+
+  <figure class="slot" data-type="image" data-title="Multimedia 8 · Ilustración 1: dignidad y cultura" data-src="img/foto.png"></figure>
+
+  <div class="sep">Actividades de apropiación: dignidad y cultura</div>
+  <div class="qa"><div class="q"><span>Actividad</span><h3>¿Los dos personajes tienen la misma dignidad? ¿Por qué?</h3></div>
+  <div class="a"><span>Mi respuesta</span><p>Sí. Todos los seres humanos merecen respeto y tienen los mismos derechos, sin importar su origen o apariencia.</p></div></div>
+  <div class="qa"><div class="q"><span>Actividad</span><h3>¿Tienen la misma cultura? ¿Por qué?</h3></div>
+  <div class="a"><span>Mi respuesta</span><p>No. Cada uno pertenece a un grupo con costumbres, creencias y tradiciones distintas, pero eso no justifica maltratar ni dominar a una persona.</p></div></div>
+  <div class="qa"><div class="q"><span>Actividad</span><h3>¿Qué opina de «¿Quién sos vos para juzgar si lo que hago es bueno o malo?» y «respeta mi cultura»?</h3></div>
+  <div class="a"><span>Mi respuesta</span><p>La primera no justifica la violencia ni la explotación. La segunda es válida, pero el respeto debe ser para todos y no puede usarse como excusa para afectar a los demás.</p></div></div>
+  <div class="qa"><div class="q"><span>Actividad</span><h3>¿Qué opinión le merece la respuesta del personaje nativo?</h3></div>
+  <div class="a"><span>Mi respuesta</span><p>Es acertada: también deben respetarse sus tradiciones y derechos. No es correcto imponer una cultura por la fuerza.</p></div></div>
+  <div class="qa"><div class="q"><span>Actividad</span><h3>Si una acción maltrata la dignidad humana, ¿puede ser un valor cultural?</h3></div>
+  <div class="a"><span>Mi respuesta</span><p>No. Si maltrata, humilla o quita derechos, no es un valor cultural. Las costumbres merecen respeto, siempre que respeten la dignidad humana.</p></div></div>
+
+  <div class="sep">Mi historia</div>
+  <div class="qa"><div class="q"><span>Actividad</span><h3>¿Quiénes han influido más en su vida y qué acontecimientos la marcaron?</h3></div>
+  <div class="a"><span>Mi respuesta</span>
+  <p><b>Personas:</b> mi familia (madre, padre, abuelos), mi hija, mi pareja y algunos amigos.</p>
+  <p><b>Dolorosos:</b> la partida de seres queridos, rupturas amorosas y menosprecios. <b>Alegres:</b> logros como bachiller y los títulos obtenidos.</p>
+  <p><b>Éxitos y fracasos:</b> éxitos como los títulos; fracasos como proyectos mal ejecutados por falta de responsabilidad.</p>
+  <p><b>Decisiones:</b> trabajar y estudiar al mismo tiempo; causa estrés, pero deja resultados.</p></div></div>
+
+    <div class="qa"><div class="q"><span>Actividad</span><h3>Relación con los otros: apoyos, impedimentos y acciones</h3></div>
+  <div class="a"><span>Mi respuesta</span>
+  <p><b>Apoyos:</b> familia, amigos, SENA e instructores. Nos apoyan con moral y consejos; el SENA aporta experiencia, saberes y herramientas.</p>
+  <p><b>Impedimentos:</b> estabilidad económica, falta de recursos y de tiempo.</p>
+  <p><b>Acciones:</b> organizar los horarios, no perder tiempo y conseguir un trabajo de medio tiempo.</p></div></div>
+
+    <figure class="slot" data-type="image" data-title="Multimedia 9 · Ilustración 2: proyecto de vida" data-src="img/proyecto.png"></figure>
+
+      <figure class="slot" data-type="image" data-title="Multimedia 10 ·" data-src="img/sena.png"></figure>
+</section>
+</main>
+
+<footer id="pie">
+  <p>Elaborado por</p>
+  <!-- ESCRIBE TU NOMBRE entre las etiquetas de abajo: <div class="nombre">TU NOMBRE</div> -->
+  <div class="nombre">Sebastian Alonso, Alejandro Lopez, Joan Cespedes, Nicolas Romero</div>
+  <small>Tecnología en Análisis y Desarrollo de Software · SENA Regional Distrito Capital · Ficha 3603495</small>
+</footer>
+
+<script>
+(function(){
+  // Espacios multimedia: se llenan SOLO desde el código (atributo data-src de cada <figure class="slot">)
+  var etq={image:'imagen',video:'video',audio:'audio'};
+  function embed(url){
+    var m=url.match(/(?:youtu\.be\/|v=|embed\/)([\w-]{11})/);
+    return m?'https://www.youtube.com/embed/'+m[1]:null;
+  }
+  document.querySelectorAll('.slot').forEach(function(f){
+    var t=f.dataset.type,src=(f.dataset.src||'').trim(),box=document.createElement('div');
+    box.className='box';
+    f.innerHTML='<figcaption><span>'+f.dataset.title+'</span><span>'+etq[t]+'</span></figcaption>';
+    f.appendChild(box);
+    if(!src){
+      box.innerHTML='<div><p><b>Espacio para '+etq[t]+'</b></p><p>Abre el código y escribe la ruta en <code>data-src=""</code> de este espacio.<br>Ejemplo: <code>data-src="img/'+f.dataset.title.split(' ')[1]+'.jpg"</code></p></div>';
+      return;
+    }
+    var e=embed(src),n;
+    if(e){
+      var id=e.split('/embed/')[1];
+      if(location.protocol==='file:'){
+        // YouTube bloquea los videos incrustados en archivos abiertos desde el disco (error 153):
+        // se muestra la miniatura y se abre el video en YouTube. Con Live Server o en internet se incrusta normal.
+        n=document.createElement('a');n.className='yt';n.href='https://www.youtube.com/watch?v='+id;n.target='_blank';n.rel='noopener';
+        n.innerHTML='<img alt="Miniatura del video" src="https://i.ytimg.com/vi/'+id+'/hqdefault.jpg"><span>▶ Ver en YouTube</span>';
+      }else{
+        n=document.createElement('iframe');n.src='https://www.youtube.com/embed/'+id+'?rel=0';n.title=f.dataset.title;
+        n.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+        n.referrerPolicy='strict-origin-when-cross-origin';n.allowFullscreen=true;
+      }
+    }
+    else if(t==='image'){n=new Image();n.alt=f.dataset.title;n.src=src}
+    else{n=document.createElement(t);n.controls=true;n.src=src}
+    box.appendChild(n);
+  });
+})();
+</script>
+</body>
+</html>
